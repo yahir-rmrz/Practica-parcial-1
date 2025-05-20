@@ -14,87 +14,11 @@ public class Operacion {
         String cod = "";
         for (int i = 0; i < a.length(); i++) {
             System.out.println(a.charAt(i));
-            switch (a.codePointAt(i)) {
-                case 48:
-                    cod = cod + "a";  
-                    break;
-                case 49:
-                    cod = cod + "b";  
-                    break;
-                case 50:
-                    cod = cod + "c";  
-                    break;
-                case 51:
-                    cod = cod + "d"; 
-                    break;
-                case 52:
-                    cod = cod + "e";  
-                    break;
-                case 53:
-                    cod = cod + "f"; 
-                    break;
-                case 54:
-                    cod = cod + "g";  
-                    break;
-                case 55:
-                    cod = cod + "h";  
-                    break;
-                case 56:
-                    cod = cod + "i";  
-                    break;
-                case 57:
-                    cod = cod + "j";  
-                    break;
-                case 33:
-                    cod = cod + "k";  
-                    break;
-                case 34:
-                    cod = cod + "l";  
-                    break;
-                case 35:
-                    cod = cod + "m";  
-                    break;
-                case 36:
-                    cod = cod + "n";  
-                    break;
-                case 37:
-                    cod = cod + "o";  
-                    break;
-                case 38:
-                    cod = cod + "p";  
-                    break;
-                case 39:
-                    cod = cod + "q";  
-                    break;
-                case 40:
-                    cod = cod + "(r";  
-                    break;
-                case 41:
-                    cod = cod + "s";  
-                    break;
-                case 42:
-                    cod = cod + "t";  
-                    break;
-                case 43:
-                    cod = cod + "u";  
-                    break;
-                case 44:
-                    cod = cod + "v"; 
-                    break;
-                case 45:
-                    cod = cod + "w";  
-                    break;
-                case 46:
-                    cod = cod + "x"; 
-                    break;
-                case 47:
-                    cod = cod + "y";  
-                    break;
-                case 58:
-                    cod = cod + "z";  
-                    break;
-            }
-
+            int cp = a.codePointAt(i);
+            if      (cp >= 48 && cp <= 57) cod += (char)('a' + (cp - 48)); 
+            else if (cp >= 33 && cp <= 47) cod += (char)('k' + (cp - 33)); 
+            else if (cp == 58)             cod += "z";
+            else if (cp == 40)             cod += "(r";              
         }
 
         return cod;
